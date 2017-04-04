@@ -9,6 +9,13 @@ RSpec.describe User, type: :model do
     expect(build(:user, username: nil)).not_to be_valid
   end
 
+  it 'requires a unique username' do
+    create(:user, username: 'gitflow')
+    user = build(:user, username: 'gitflow')
+    user.valid?
+    expect(user.errors.full_messages).to include("Username has already been taken")
+  end
+
   it 'is invalid without an email' do
     expect(build(:user, email: nil)).not_to be_valid
   end

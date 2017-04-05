@@ -203,11 +203,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
   byebug
   capybara
   coffee-rails (~> 4.2)
-  devise
+  devise (= 4.2.0)
   factory_girl_rails
   faker
   jbuilder (~> 2.5)

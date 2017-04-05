@@ -47,8 +47,8 @@ RSpec.describe User, type: :model do
     it 'encrypts the password upon saving' do
       user = build(:user)
       user.save
-      expect(user.password_digest).to be_truthy
-      expect(user.password_digest).not_to eq(user.password)
+      expect(user.encrypted_password).to be_truthy
+      expect(user.encrypted_password).not_to eq(user.password)
     end
   end
 
@@ -63,7 +63,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'instance methods' do
-    
+
   end
 
 end

@@ -1,0 +1,6 @@
+<%= form_for @classroom do |f| %>
+  <%= f.text_field :subject, placeholder: "subject" %>
+  <%= f.text_field :period, placeholder: "period"  %>
+  
+  <%= f.submit "Add classroom" %>
+<% end %>

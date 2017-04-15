@@ -1,0 +1,13 @@
+Classroom Index Page
+
+<ol>
+  <% @classrooms.each do |classroom| %>
+    <li><%= classroom.period %> - <%= classroom.subject %></li>
+    <li><%= classroom.teacher.last_name %></li>
+    <ul>
+    <% classroom.students.each do |student| %>
+      <li><%= "#{student.first_name} #{student.last_name}" %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</ol>
